@@ -18,7 +18,7 @@ and the machete so it does not dull or break before the other blades.
 
 ```
 mods/KatanaSharpening/     the mod published to the Workshop
-workshop/ficha.json        listing data: title, descriptions per language
+workshop/listing.json        listing data: title, descriptions per language
 workshop/preview.png       cover image, 256x256
 workshop/gallery/          carousel images, 1280x720
 ```
