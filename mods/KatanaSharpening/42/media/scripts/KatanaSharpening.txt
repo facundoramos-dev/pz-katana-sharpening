@@ -1,0 +1,73 @@
+module Base
+{
+    /*
+     * Katana: the vanilla definition (Build 42.21) with three changes.
+     *
+     * 1. Tags += base:sharpenable
+     *    Without this tag the katana is the ONLY long blade in the game that
+     *    cannot be sharpened: the "Sharpen Blade" recipe (whetstone, file or
+     *    grindstone) asks for an item with the base:sharpenable tag, and the
+     *    katana does not have it. Machete, sword, knives and axes all do.
+     *
+     * 2. ConditionMax 10 -> 13 (same as the sword and the machete)
+     *    The edge (Sharpness) wears off by 1/ConditionMax per hit, and the
+     *    ConditionMax is also how long the weapon lasts: with 10 the katana
+     *    broke before any other blade.
+     *
+     * 3. ConditionLowerChanceOneIn 15 -> 20 (same as the sword)
+     *    Chance of a hit damaging the weapon.
+     *
+     * WHY THE EDGE MATTERS: the engine scales melee damage by
+     * (Sharpness + 1) / 2. With a pristine edge (1.0) the damage is 100%, with
+     * a dull edge (0.0) it is 50%. Since the katana could not be sharpened, a
+     * dulled one stayed at 50% forever.
+     */
+    item Katana
+    {
+        DisplayCategory = Weapon,
+        ItemType = base:weapon,
+        Weight = 2.0,
+        Icon = Katana,
+        AttachmentType = Sword,
+        BaseSpeed = 1.0,
+        BreakSound = KatanaBreak,
+        Categories = base:longblade,
+        ConditionLowerChanceOneIn = 20,
+        ConditionMax = 13,
+        CritDmgMultiplier = 6.0,
+        CriticalChance = 35.0,
+        DamageCategory = Slash,
+        DamageMakeHole = true,
+        DoorDamage = 8,
+        DoorHitSound = KatanaHit,
+        DropSound = KatanaDrop,
+        HitAngleMod = -30.0,
+        HitFloorSound = KatanaHit,
+        HitSound = KatanaHit,
+        ImpactSound = KatanaHit,
+        KnockBackOnNoDeath = true,
+        KnockdownMod = 0.0,
+        MaxDamage = 8.0,
+        MaxHitcount = 3,
+        MaxRange = 1.4,
+        MinAngle = 0.8,
+        MinDamage = 8.0,
+        MinRange = 0.61,
+        MinimumSwingtime = 3.0,
+        PushBackMod = 0.5,
+        RunAnim = Run_Weapon2,
+        SubCategory = Swinging,
+        SwingAmountBeforeImpact = 0.02,
+        SwingAnim = Bat,
+        SwingSound = KatanaSwing,
+        Swingtime = 3.0,
+        Tags = base:ignorezombiedensity;base:hasmetal;base:fullblade;base:sharpenable,
+        TreeDamage = 1,
+        TwoHandWeapon = true,
+        WeaponLength = 0.4,
+        WeaponSprite = Katana,
+        Sharpness = 1.0,
+        OnBreak = OnBreak.Katana,
+        Researchablerecipes = Forge_Crude_Shortsword_Blade;Forge_Crude_Sword_Blade;Forge_ShortSwordBlade;Forge_Sword_Blade;Forge_Straight_Razor,
+    }
+}
