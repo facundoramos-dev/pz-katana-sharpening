@@ -17,10 +17,10 @@ and the machete so it does not dull or break before the other blades.
 ## Layout
 
 ```
-mods/KatanaSharpening/     the mod published to the Workshop
-workshop/listing.json        listing data: title, descriptions per language
-workshop/preview.png       cover image, 256x256
-workshop/gallery/          carousel images, 1280x720
+mods/KatanaSharpening/  the mod published to the Workshop
+workshop/listing.json   listing data: title, descriptions per language
+workshop/preview.png    cover image, 256x256
+workshop/gallery/       carousel images, 1280x720
 ```
 
 The listing images and the upload itself are handled by
